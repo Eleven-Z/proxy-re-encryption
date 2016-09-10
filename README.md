@@ -17,7 +17,7 @@ the following commands:
  --> unzip -j -aa -L miracl3.zip miracl/
  --> bash linux64 % For 64bits system
  
- Then, miracl.a will be generated in miracl/. Some examples were also compiled and you can run them to verify the miracl.a, e.g. hail, pk_demo.
+ Then, miracl.a will be generated in miracl/. Some examples were also compiled and you can run them to verify the miracl.a, e.g. hail, pk_demo. Note that It must be miracl3, not the latest version!
  
  2. Untar the file prelib.tar.gz in the same base directory in which
 you created the miracl/ directory (parallel to miracl/). Next, build the library
