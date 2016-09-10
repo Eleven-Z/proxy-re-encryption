@@ -1,0 +1,64 @@
+This is a pre-release of the JHU-MIT Proxy Re-cryptography Library
+(PRL).  A number of aspects of this release are incomplete.  Most
+notably:
+
+* The C API wrapper allowing C language programs to use the library
+natively. Currently all linking applications must be C++ based.
+
+* The User's Guide does not contain a description of the library API.
+This will be remedied shortly.
+
+Compiling the library: 
+======================
+
+Building and Installing the Library
+
+The PRL is distributed in source-code form, and is targeted for Linux
+platforms.  However, with small modifications the library should
+compile on other Unix-type systems (provided that the MIRACL library
+is supported), and on Windows platforms.  The Linux build process
+outlined below assumes a system with gcc and other common utilities
+installed.  To build the library:
+
+1. Obtain the MIRACL library miracl3.zip from
+http://www.shamus.ie/. Unzip and build the library archive file using
+the following commands:
+
+ mkdir miracl/
+ unzip -j -aa -L miracl3.zip miracl/
+ cd miracl/
+ bash linux
+
+These commands unzip the contents of miracl3.zip into the directory
+miracl/--- ignoring the directory structure specified within the zip
+file--- and build the library.  See the MIRACL documentation if this
+step does not succeed.
+
+Untar the file proxylib0_1.tar.gz in the same base directory in which
+you created the miracl/ directory (this is important: the PRL build
+scripts looks for the miracl/ directory here). Next, build the library
+via the following commands:
+
+ cd proxylib/src/
+ make clean
+ make
+
+Run ./proxylib_test at the command line.  This utility runs diagnostic
+tests on the library to ensure that it is correctly built and ready
+for use.
+
+===
+
+By default, the PRL is built as a static library file (proxylib.a).
+This library contains the proxy re-encryption routines, but does not
+contain the MIRACL code required to actually use the library.  An
+application using the PRL must link against both proxylib.a and
+miracl.a (which can be found in the miracl/ directory).  Users who
+find this inconvenient may wish to generate a single library file
+containing all necessary code.  To do this, run the command ``make
+withmiracl''.  This will generate a single combined library
+proxylibmiracl.a that embeds the miracl object code.  If you choose
+this option, you should not link miracl.a to your program, as the
+linker will object to the duplicated code.
+
+
