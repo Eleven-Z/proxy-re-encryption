@@ -25,4 +25,4 @@ via the following commands:
 --> unzip PRE-Library-master.zip  % decompress to PRE-Library-master/, change the direcory name as you like
 --> cd PRE-Library-master/src/
 --> make clean
---> make all  % Re-build the miracl.a, proxylib.a and proxylib_test. Run ./proxylib_test to verify.
+--> make all  % Re-build the miracl.a, proxylib.a and proxylib_test. Run ./proxylib_test to verify. Good luck!
