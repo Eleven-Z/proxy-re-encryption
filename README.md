@@ -19,10 +19,10 @@ the following commands:
  
  Then, miracl.a will be generated in miracl/. Some examples were also compiled and you can run them to verify the miracl.a, e.g. hail, pk_demo. Note that It must be miracl3, not the latest version!
  
- 2. Untar the file prelib.tar.gz in the same base directory in which
-you created the miracl/ directory (parallel to miracl/). Next, build the library
+ 2. Download and save the master file PRE-Library-master.zip in the same base directory in which
+you created the miracl/ directory (parallel to miracl/). Next, decompress and build the library
 via the following commands:
---> tar -zxvf prelib.tar.gz  % decompress to proxylib/
---> cd proxylib/src/
+--> unzip PRE-Library-master.zip  % decompress to PRE-Library-master/, change the direcory name as you like
+--> cd PRE-Library-master/src/
 --> make clean
 --> make all  % Re-build the miracl.a, proxylib.a and proxylib_test. Run ./proxylib_test to verify.
